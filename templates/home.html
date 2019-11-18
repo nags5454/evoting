@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block breadcrumb %}
+<li class="breadcrumb-item active"><center>ELLECTION COMMISION</center></li>
+{% endblock %}
+{% block content %}
+    <div class="grid">
+    	<div class="row">
+    		<div class="col-6">
+    			<center><br><a href="{% url 'electrol' usr.id %}" class="btn btn-danger" align="center">ELECTOROL LOGIN</a></br></center>
+    		</div>
+    		<div class="col-6">
+    			<center><br><a href="{% url 'vote' usr.id %}" class="btn btn-danger" align="center">VOTE</a><br></center>
+    		</div>
+    	</div>
+    	<div class="col-12">
+    		<center><img src="\..\static\img\ec.jpeg"  style="height: 100%; width: 100%;"/></center>
+    	</div>
+    </div>
+
+{% endblock %}

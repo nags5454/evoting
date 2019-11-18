@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block breadcrumb %}
+<li class="breadcrumb-item active"><center>ELECTION COMMISION</center></li>
+
+{% endblock %}
+
+ 
+
+ 
+{% block content %}
+<style type="text/css">
+#watermark {
+  color: #d0d0d0;
+  font-size: 200pt;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: -1;
+  left:0px;
+  top:0px;
+}
+</style>
+
+<div id="watermark">
+  			<img src="\..\static\img\vote.png"  style="height: 100%; width: 100%;opacity: 1;"/>
+	</div>
+	<form method='POST'>
+	{% csrf_token %}
+	<br>
+	<div class="row justify-content-center">     
+   		<div class="col-lg-4 col-md-10 col-sm-10">   
+   		    <div class="card">    
+   		         <div class="card-body">
+	<div class='form-group'>
+		<label for='id_e_user_id'>OFFICER USER ID</label>
+		<input type='Char' class='form-control' id='id_e_user_id' name='e_user_id'>
+	</div>
+	<div class='form-group'>
+		<label for='id_e_pwd'>PASSWORD</label>
+		<input type='password' class='form-control' id='id_e_pwd' name='e_pwd'>
+	</div>
+	<center><button type="submit" class="btn btn-success">LOGIN</button>
+	</form>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

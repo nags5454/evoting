@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+<style type="text/css">
+	h5 {text-align: middle;position: relative;left: 40px; width: 200px;}
+</style>
+{% block breadcrumb %}
+<li class="breadcrumb-item active"><center>ELLECTION COMMISION</center></li>
+{% endblock %}
+{% block content %}
+	<div class="grid">
+		<div class="row">
+			<div class="col-6">
+				<h2>VOTER DETAILS</h2>
+				<a style="font-size: 20px;text-align:right"/><b>Name:</b> {{single_adhar.name}} <br>
+				<a style="font-size: 20px;text-align:right"/><b>DOB:</b> {{single_adhar.Year_of_birth}} <br>
+				<a style="font-size: 20px;text-align:right"/><b>Aadhar no.:</b> {{single_adhar.Aa_number_id}} <br>
+				<a style="font-size: 20px;text-align:right"/><b>Gender:</b> {{single_adhar.sex}} <br>
+				<a style="font-size: 20px;text-align:right"/><b>Address:</b> {{single_adhar.address}} <br>
+				<a style="font-size: 20px;text-align:right"/><b>District:</b> {{single_adhar.district}} <br>
+				<a style="font-size: 20px;text-align:right"/><b>State:</b> {{single_adhar.state}} <br>
+				<a style="font-size: 20px;text-align:right"/><b>Pin Code:</b> {{single_adhar.pincode}} <br>
+				<a style="font-size: 20px;text-align:right"/><b>Constituency:</b> {{single_adhar.v_VID.c_CID.const_loc}} <br>
+			</div>
+			<div class="col-6">
+				<h5 align="center">CONTESTENTS IN YOUR CONSTITUENCY</h5>
+				<table class="table">
+			<thead class="thead-inverse">
+				<tr>
+					<th><a style="font-size: 20px;text-align:right"/><b>Contestent<br>Name</b></th>
+					<th><a style="font-size: 20px;text-align:right"/><b>Contestent<br>symbol</b></th>
+					<th><a style="font-size: 20px;text-align:right"/><b>VOTE</b></th>
+				</tr>
+			</thead>
+			<tbody>
+			{%for cn in contestents %}
+				<tr>
+					<td class="align-middle"><center>{{ cn.c_name }}</center></td>
+					<td class="align-middle"><center><img src="\..\static\img\{{ cn.c_img }}.jpg"  style="height: 45px; width: 45px;"/></center>
+					</a></td>
+					<td><center><br><a href="{% url 'cast' cn.id single_adhar.id usr.id %}" class="btn btn-danger" align="center">CAST</a></br></center></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
+
+
+
+
+

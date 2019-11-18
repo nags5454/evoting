@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Verification of Aadhar{% endblock %}
+{% block breadcrumb %}
+<li class="breadcrumb-item active"><center>ELLECTION COMMISION</center></li>
+{% endblock %}
+
+
+{% block content %}
+<style type="text/css">
+#watermark {
+  color: #d0d0d0;
+  font-size: 200pt;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: -1;
+  left:0px;
+  top:0px;
+}
+</style>
+
+	<div id="watermark">
+  			<img src="\..\static\img\asbg.png"  style="height: 100%; width: 100%;opacity: 0.5;"/>
+	</div>
+	<form method='POST'>
+	{% csrf_token %}
+	<br>
+	<div class="row justify-content-center" >     
+   		<div class="col-lg-4 col-md-10 col-sm-10">   
+   		    <div class="card">    
+   		         <div class="card-body">
+	<div class='form-group'>
+		<label for='id_a_num'>Aadhaar number</label>
+		<input type='Integer' class='form-control' id='id_a_num' name='a_num'>
+	</div>
+
+	<center><button type="submit" class="btn btn-success">Verify</button>
+	</form>
+</div>
+</div>
+</div>
+</div>
+<center><br><a href="{% url 'home' usr.id %}" class="btn btn-danger" align="center">HOME</a></br></center>
+
+{% endblock %}

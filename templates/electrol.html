@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active"><center>ELECTION OFFICER</center></li>
+{% endblock %}
+<style type="text/css">
+#watermark {
+  color: #d0d0d0;
+  font-size: 200pt;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  z-index: -1;
+  left:0px;
+  top:0px;
+}
+</style>
+{% block content %}
+
+
+
+
+
+		<h1>CONTESTENTS IN THIS CONSTITUENCY</h1>
+		<table class="table">
+			<thead class="thead-inverse">
+				<tr>
+					<th style="text-align:center;">Contestent Name</th>
+					<th style="text-align:center;">Contestent symbol</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+			{%for cn in contestents %}
+				<tr>
+					<td class="align-middle"><center>{{ cn.c_name }}</center></td>
+					<td class="align-middle"><center><img src="..\..\static\img\{{ cn.c_img }}.jpg"  style="height: 45px; width: 45px;"/></center>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		    <h4>Votes casted : {{nv}}</h4>
+				
+				<center><br><a href="{% url 'home' e_a.id %}" class="btn btn-danger" align="center">HOME</a></br></center>
+{% endblock %}
+
+	
