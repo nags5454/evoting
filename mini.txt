@@ -1,0 +1,7 @@
+C:\Users\USER>venv\Scripts\activate
+
+(venv) C:\Users\USER>G:
+
+(venv) G:\>cd evoting
+
+(venv) G:\evoting>py manage.py runserver
